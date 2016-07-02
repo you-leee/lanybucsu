@@ -1,22 +1,26 @@
 extends layout
 
 block content
-  h1(class='text-center') A második helyszín...
-  div(class='text-center')
-    audio(loop='loop' controls='controls' autoplay='autoplay')
-      source(src='https://zsolanybucsu.herokuapp.com/music/Aurora_Elore_Kurvak_Gengszterek.mp3' type='audio/mpeg')
+  div(class='container')
+    h1(class='text-center') A második helyszín...
+    div(class="row")
+      div(class='text-center')
+        audio(loop='loop' controls='controls' autoplay='autoplay')
+          source(src='/music/Aurora_Elore_Kurvak_Gengszterek.mp3' type='audio/mpeg')
 
-  - var lotyiClass = answers.lotyi === undefined ? "form-group" : "form-group has-success has-feedback"
-  - var lotyiGlyphicon = answers.lotyi === undefined ? "visibility:hidden" : "visibility:visible"
-  - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+    - var lotyiClass = answers.lotyi === undefined ? "form-group" : "form-group has-success has-feedback"
+    - var lotyiGlyphicon = answers.lotyi === undefined ? "visibility:hidden" : "visibility:visible"
+    - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+    div(class="row")
+      form(name='lotyi', method='post', role='form', action=postRoute)
+        div(class =lotyiClass)
+          label Melyik kocsmában szólt állandóan ez a szám?
+          input(type='text', class='form-control', name='lotyi', value=answers.lotyi)
+          span(class="glyphicon glyphicon-ok form-control-feedback", style=lotyiGlyphicon)
+        div(class='text-center')
+          button(type='submit', class='btn btn-default') Mehet
 
-  form(name='lotyi', method='post', role='form', action=postRoute)
-    div(class =lotyiClass)
-      label Melyik kocsmában szólt állandóan ez a szám?
-      input(type='text', class='form-control', name='lotyi', value=answers.lotyi)
-      span(class="glyphicon glyphicon-ok form-control-feedback", style=lotyiGlyphicon)
-    button(type='submit', class='btn btn-default') Mehet
-
-  div(class='text-center')
-    pre(style=successStyle class='text-center bg-success') A megfejtés helyes!
-    a(href=nextRoute class='btn btn-large btn-default' style=successStyle) Indulás
+    div(class="row top-buffer")
+      div(class='text-center')
+        pre(style=successStyle class='text-center bg-success') A megfejtés helyes!
+        a(href=nextRoute class='btn btn-large btn-default' style=successStyle) Indulás
