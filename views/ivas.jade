@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  iframe(src=mapSource width="600" height="450" frameborder="0" style="border:0" allowfullscreen)
-  a(class='btn btn-default', href=nextRoute) Jöhet a következő kocsma, itt már eleget ittam!
+  div(class='container')
+    div(class="embed-responsive embed-responsive-16by9")
+      iframe(src=mapSource width="600" height="450" frameborder="0" style="border:0" allowfullscreen)
+    div(class="row text-center top-buffer")
+      a(class='btn btn-default', href=nextRoute) Jöhet a következő kocsma, itt már eleget ittam!
