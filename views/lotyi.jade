@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  div(class='text-center')
+    audio(loop='loop' controls='controls' autoplay='autoplay')
+      source(src='http://localhost:3000/music/Aurora_Elore_Kurvak_Gengszterek.mp3' type='audio/mpeg')
+  div(class='text-center')
+    a(class='btn btn-default', href=nextRoute) Jöhet a következő kocsma!
