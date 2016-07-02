@@ -5,9 +5,9 @@ block content
   - var nextRouteHidden = hasNetRoute ? "visibility:visible" : "visibility:hidden"
   - var picturesLinkHidden = hasNetRoute ? "visibility:hidden" : "visibility:visible"
   div(class='container')
-    div(class="row text-center top-buffer" style=picturesLinkHidden)
+    div(class="row text-center" style=picturesLinkHidden)
       p(class='text-center lead') A kocsmatúra utolsó helyét is elértük, irány a Rocktogon!
-      button(class='btn btn-link', href=nextRoute) Link régi margitos képekhez
+      //button(class='btn btn-link', href=nextRoute) Link régi margitos képekhez
     div(class="embed-responsive embed-responsive-16by9")
       iframe(src=mapSource width="600" height="450" frameborder="0" style="border:0" allowfullscreen)
     div(class="row text-center top-buffer" style=nextRouteHidden)

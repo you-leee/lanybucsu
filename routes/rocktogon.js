@@ -4,7 +4,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('rocktogon',
     {
-      postRoute: "/kocsma4",
       nextRoute: "/kocsma4/ivas"
   });
 });
