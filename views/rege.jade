@@ -1,36 +1,69 @@
 extends layout
 
 block content
-  h1(class='text-center') Érettségi 2016
-  pre(class='text-center') Az első helyszín (és felesek..) előtt bizony még egyszer át kell menned ... Valami ilyen szöveg kéne ide
+  div(class='container')
+    div(class="row")
+      h1(class='text-center') Érettségi 2016
+    div(class="row")
+      p(class='text-center lead') Az első helyszín (és felesek..) előtt bizony még egyszer át kell menned az átalakított érettségin, az asszonnyá válási teszten... Valami ilyen szöveg kéne ide
 
-  form(name='erettsegi', method='post', role='form', action=postRoute)
-        - var matek1Class = answers.matek1 === undefined ? "form-group" : "form-group has-success has-feedback"
-        - var matek1Glyphicon = answers.matek1 === undefined ? "visibility:hidden" : "visibility:visible"
-        - var szeretiatikStyle = answers.szeretiatik === undefined ? "" : "color:#3c763d"
-        - var szeretiatikGlyphicon = answers.szeretiatik === undefined ? "visibility:hidden" : "visibility:visible"
-        - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+    div(class="row")
+      form(name='erettsegi', method='post', role='form', action=postRoute)
+          - var matek1Class = answers.matek1 === undefined ? "form-group" : "form-group has-success has-feedback"
+          - var matek1Glyphicon = answers.matek1 === undefined ? "visibility:hidden" : "visibility:visible"
+          - var matek2Style = answers.matek2 === undefined ? "form-group" : "form-group has-success has-feedback"
+          - var matek2Glyphicon = answers.matek2 === undefined ? "visibility:hidden" : "visibility:visible"
+          - var szeretiatikStyle = answers.szeretiatik === undefined ? "" : "color:#3c763d"
+          - var szeretiatikGlyphicon = answers.szeretiatik === undefined ? "visibility:hidden" : "visibility:visible"
+          - var tori1Class = answers.tori1 === undefined ? "form-group" : "form-group has-success has-feedback"
+          - var tori1Glyphicon = answers.tori1 === undefined ? "visibility:hidden" : "visibility:visible"
+          - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+          fieldset(class =matek1Class)
+              label Ha te 2 sört szeretnél este inni és Zsolti nálad 2x annyit szokott meginni, akkor hány sört hozol a boltból?
+              input(type='text', class='form-control', name='matek1', value=answers.matek1)
+              span(class="glyphicon glyphicon-ok form-control-feedback", style=matek1Glyphicon)
 
-        div(class =matek1Class)
-            label Ha te 2 sört szeretnél este inni és Zsolti nálad 2x annyit szokott meginni, akkor hány sört hozol a boltból?
-            input(type='text', class='form-control', name='matek1', value=answers.matek1)
-            span(class="glyphicon glyphicon-ok form-control-feedback", style=matek1Glyphicon)
-        label Egészítsd ki a mondatot: "Szereti a tik a meggyet..."
-        div.radio
-            label
-              input(type='radio', name='szeretiatik', value='tizen')
-              | Tizen szeretünk mi kettőt!
-        div.radio
-            label(style=szeretiatikStyle)
-              input(type='radio', name='szeretiatik', value='helyes', checked=answers.szeretiatik)
-              | Ketten szeretünk mi egyet!
-              span(class="glyphicon glyphicon-ok form-control-feedback", style=szeretiatikGlyphicon)
-        div.radio
-            label
-              input(type='radio', name='szeretiatik', value='jesszus')
-              | Jesszus...
-        button(type='submit', class='btn btn-default') Mehet
+          - var sets = "<code>A = {almafröccs, magában, pálinka, chips, igyon, torkunkba, kocsma, ropi, bor, sör, ló, folyjon}, B = {ház, jóból, kerítés, söntés, bor, májunk, torkunkba, gyomrunkba, pálinka, hamburger, körte, sör, folyjon, sok, patak, Duna, szamár}</code>";
+          label Tekintsük a következő két hamazt: !{sets}. Mely hamlaz felel meg A &#8745; B halmaznak?
+          div.radio
+              label(style=matek2Style)
+                input(type='radio', name='matek2', value='helyes', checked=answers.matek2)
+                | {sör, bor, pálinka, folyjon, torkunkba}
+                span(class="glyphicon glyphicon-ok form-control-feedback", style=matek2Glyphicon)
+          div.radio
+              label
+                input(type='radio', name='matek2', value='rossz1')
+                | {szamár, iszik, magában}
+          div.radio
+              label
+                input(type='radio', name='matek2', value='rossz2')
+                | {jóból, is, megárt, sok}
 
-  div(class='text-center')
-    pre(style=successStyle class='text-center bg-success') A megfejtés: REGE!
-    a(href=nextRoute class='btn btn-large btn-default' style=successStyle) Indulás
+          label Egészítse ki a mondatot: "Szereti a tik a meggyet..."
+          div.radio
+              label
+                input(type='radio', name='szeretiatik', value='tizen')
+                | Tizen szeretünk mi kettőt!
+          div.radio
+              label(style=szeretiatikStyle)
+                input(type='radio', name='szeretiatik', value='helyes', checked=answers.szeretiatik)
+                | Ketten szeretünk mi egyet!
+                span(class="glyphicon glyphicon-ok form-control-feedback", style=szeretiatikGlyphicon)
+          div.radio
+              label
+                input(type='radio', name='szeretiatik', value='jesszus')
+                | Jesszus...
+
+          fieldset(class =tori1Class)
+              label Kérem nevezze meg a következő esemény évszámát! Zsubrinszky Zsófi és Kitzinger Zsolt románcának kezdete
+              input(type='text', class='form-control', name='tori1', value=answers.tori1)
+              span(class="glyphicon glyphicon-ok form-control-feedback", style=tori1Glyphicon)
+
+
+          div(class='text-center')
+            button(type='submit', class='btn btn-default') Mehet
+
+    div(class="row top-buffer")
+      div(class='text-center')
+        pre(style=successStyle, class='text-center bg-success') Gratulálunk, ön sikeresen teljesítette az érettségit! Az első helyszín: REGE!
+        a(href=nextRoute, class='btn btn-large btn-default' style=successStyle) Indulás

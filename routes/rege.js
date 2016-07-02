@@ -3,7 +3,9 @@ var router = express.Router();
 
 var answers = {
   matek1: "6",
-  szeretiatik: "helyes"
+  matek2: "helyes",
+  szeretiatik: "helyes",
+  tori1: "2011"
 };
 
 router.get('/', function(req, res, next) {
@@ -20,7 +22,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  //var fields = [];
   console.log(req.body);
   console.log(answers);
 
