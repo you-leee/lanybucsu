@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var answers = {
-  lotyi: "martos",
+  martos: "martos",
 };
 
 router.get('/', function(req, res, next) {

@@ -4,36 +4,108 @@ block content
   h1(class='text-center') A 12.c kedvence
   div(class="container")
     div(class="row")
-      h3(class='text-center') Minden sorban keresd ki a képek közül a kakukktojást, majd a megfejtés betűiből kijön a következő helyszín!
+      pre(class='text-center') Minden sorban keresd ki a képek közül a kakukktojást, majd a megfejtés betűiből kijön a következő helyszín!
     div(class="row")
       div(class="col-xs-3")
-        label K
+        label(class='badge') K
         img(src='https://zsolanybucsu.herokuapp.com/images/martos1/IM000841.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
       div(class="col-xs-3")
-        label L
-        img(src='https://zsolanybucsu.herokuapp.com/images/martos1/P1010048.jpg' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+        label(class='badge') L
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos1/P1010048.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
       div(class="col-xs-3")
-        label M
+        label(class='badge') M
         img(src='https://zsolanybucsu.herokuapp.com/images/martos1/IM000800.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
       div(class="col-xs-3")
-        label N
+        label(class='badge') N
         img(src='https://zsolanybucsu.herokuapp.com/images/martos1/P1010090.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+
     div(class="row")
-      div(class="col-xs-4")
-      div(class="col-xs-4")
-      div(class="col-xs-4")
+      div(class="col-xs-3")
+        label(class='badge') A
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos2/P1010091.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') B
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos2/P1010010.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') C
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos2/P1010089.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') D
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos2/P1010032.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
 
-  - var martosClass = answers.martos === undefined ? "form-group" : "form-group has-success has-feedback"
-  - var martosGlyphicon = answers.martos === undefined ? "visibility:hidden" : "visibility:visible"
-  - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+    div(class="row")
+      div(class="col-xs-3")
+        label(class='badge') O
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos3/P1010002.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') P
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos3/P1010013.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') Q
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos3/P1010018.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') R
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos3/P1010053.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
 
-  form(name='martos', method='post', role='form', action=postRoute)
-    div(class =martosClass)
-      label Megfejtés
-      input(type='text', class='form-control', name='martos', value=answers.martos)
-      span(class="glyphicon glyphicon-ok form-control-feedback", style=martosGlyphicon)
-    button(type='submit', class='btn btn-default') Mehet
+    div(class="row")
+      div(class="col-xs-3")
+        label(class='badge') R
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos4/P1010011.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') S
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos4/P1010016.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') T
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos4/P1010022.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') U
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos4/P1010009.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
 
-  div(class='text-center')
-    pre(style=successStyle class='text-center bg-success') A megfejtés helyes!
-    a(href=nextRoute class='btn btn-large btn-default' style=successStyle) Indulás
+    div(class="row")
+      div(class="col-xs-3")
+        label(class='badge') M
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos5/P1010037.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') N
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos5/P1010017.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') O
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos5/P1010021.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') P
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos5/P10100013.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+
+    div(class="row")
+      div(class="col-xs-3")
+        label(class='badge') R
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos6/P1010012.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') S
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos6/P1010016.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') T
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos6/P1010058.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label(class='badge') U
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos6/P10100013.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+
+    div(class="row")
+      - var martosClass = answers.martos === undefined ? "form-group text-center" : "form-group has-success has-feedback text-center"
+      - var martosGlyphicon = answers.martos === undefined ? "visibility:hidden" : "visibility:visible"
+      - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+      form(name='martos', method='post', role='form', action=postRoute)
+        div(class =martosClass)
+          label Megfejtés
+          input(type='text', class='form-control', name='martos', value=answers.martos)
+          span(class="glyphicon glyphicon-ok form-control-feedback", style=martosGlyphicon)
+          button(type='submit', class='btn btn-default') Mehet
+    div(class="row")
+      div(class='text-center')
+        pre(style=successStyle class='text-center bg-success') A megfejtés helyes!
+        a(href=nextRoute class='btn btn-large btn-default' style=successStyle) Indulás
+
+
+
+
+
+
