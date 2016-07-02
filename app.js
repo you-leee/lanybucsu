@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var rege = require('./routes/rege');
 var lotyi = require('./routes/lotyi');
+var martos = require('./routes/martos');
 
 var app = express();
 
@@ -27,6 +28,9 @@ app.use('/', routes);
 app.use('/kocsma1', rege);
 app.use('/kocsma1/ivas', rege);
 app.use('/kocsma2', lotyi);
+app.use('/kocsma2/ivas', lotyi);
+app.use('/kocsma3', martos);
+app.use('/kocsma3/ivas', martos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

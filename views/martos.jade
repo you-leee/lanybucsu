@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1(class='text-center') A 12.c kedvence
+  div(class="container")
+    div(class="row")
+      h3(class='text-center') Minden sorban keresd ki a képek közül a kakukktojást, majd a megfejtés betűiből kijön a következő helyszín!
+    div(class="row")
+      div(class="col-xs-3")
+        label K
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos1/IM000841.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label L
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos1/P1010048.jpg' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label M
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos1/IM000800.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+      div(class="col-xs-3")
+        label N
+        img(src='https://zsolanybucsu.herokuapp.com/images/martos1/P1010090.JPG' class="img-responsive" alt="Cinque Terre" width="304" height="236")
+    div(class="row")
+      div(class="col-xs-4")
+      div(class="col-xs-4")
+      div(class="col-xs-4")
+
+  - var martosClass = answers.martos === undefined ? "form-group" : "form-group has-success has-feedback"
+  - var martosGlyphicon = answers.martos === undefined ? "visibility:hidden" : "visibility:visible"
+  - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
+
+  form(name='martos', method='post', role='form', action=postRoute)
+    div(class =martosClass)
+      label Megfejtés
+      input(type='text', class='form-control', name='martos', value=answers.martos)
+      span(class="glyphicon glyphicon-ok form-control-feedback", style=martosGlyphicon)
+    button(type='submit', class='btn btn-default') Mehet
+
+  div(class='text-center')
+    pre(style=successStyle class='text-center bg-success') A megfejtés helyes!
+    a(href=nextRoute class='btn btn-large btn-default' style=successStyle) Indulás
