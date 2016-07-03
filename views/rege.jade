@@ -11,7 +11,7 @@ block content
       form(name='erettsegi', method='post', role='form', action=postRoute)
           - var matek1Class = answers.matek1 === undefined ? "form-group" : "form-group has-success has-feedback"
           - var matek1Glyphicon = answers.matek1 === undefined ? "visibility:hidden" : "visibility:visible"
-          - var matek2Style = answers.matek2 === undefined ? "form-group" : "form-group has-success has-feedback"
+          - var matek2Style = answers.matek2 === undefined ? "" : "color:#3c763d"
           - var matek2Glyphicon = answers.matek2 === undefined ? "visibility:hidden" : "visibility:visible"
           - var szeretiatikStyle = answers.szeretiatik === undefined ? "" : "color:#3c763d"
           - var szeretiatikGlyphicon = answers.szeretiatik === undefined ? "visibility:hidden" : "visibility:visible"
@@ -24,35 +24,37 @@ block content
               span(class="glyphicon glyphicon-ok form-control-feedback", style=matek1Glyphicon)
 
           - var sets = "<code>A = {almafröccs, magában, pálinka, chips, igyon, torkunkba, kocsma, ropi, bor, sör, ló, folyjon}, B = {ház, jóból, kerítés, söntés, bor, májunk, torkunkba, gyomrunkba, pálinka, hamburger, körte, sör, folyjon, sok, patak, Duna, szamár}</code>";
-          label Tekintsük a következő két hamazt: !{sets}. Mely hamlaz felel meg A &#8745; B halmaznak?
-          div.radio
-              label(style=matek2Style)
-                input(type='radio', name='matek2', value='helyes', checked=answers.matek2)
-                | {sör, bor, pálinka, folyjon, torkunkba}
-                span(class="glyphicon glyphicon-ok form-control-feedback", style=matek2Glyphicon)
-          div.radio
-              label
-                input(type='radio', name='matek2', value='rossz1')
-                | {szamár, iszik, magában}
-          div.radio
-              label
-                input(type='radio', name='matek2', value='rossz2')
-                | {jóból, is, megárt, sok}
+          fieldset(class ="form-group")
+            label Tekintsük a következő két hamazt: !{sets}. Mely hamlaz felel meg A &#8745; B halmaznak?
+            div.radio
+                label(style=matek2Style)
+                  input(type='radio', name='matek2', value='helyes', checked=answers.matek2)
+                  | {sör, bor, pálinka, folyjon, torkunkba}
+                  span(class="glyphicon glyphicon-ok form-control-feedback", style=matek2Glyphicon)
+            div.radio
+                label
+                  input(type='radio', name='matek2', value='rossz1')
+                  | {szamár, iszik, magában}
+            div.radio
+                label
+                  input(type='radio', name='matek2', value='rossz2')
+                  | {jóból, is, megárt, sok}
 
-          label Egészítse ki a mondatot: "Szereti a tik a meggyet..."
-          div.radio
-              label
-                input(type='radio', name='szeretiatik', value='tizen')
-                | Tizen szeretünk mi kettőt!
-          div.radio
-              label(style=szeretiatikStyle)
-                input(type='radio', name='szeretiatik', value='helyes', checked=answers.szeretiatik)
-                | Ketten szeretünk mi egyet!
-                span(class="glyphicon glyphicon-ok form-control-feedback", style=szeretiatikGlyphicon)
-          div.radio
-              label
-                input(type='radio', name='szeretiatik', value='jesszus')
-                | Jesszus...
+          fieldset(class ="form-group")
+            label Egészítse ki a mondatot: "Szereti a tik a meggyet..."
+            div.radio
+                label
+                  input(type='radio', name='szeretiatik', value='tizen')
+                  | Tizen szeretünk mi kettőt!
+            div.radio
+                label(style=szeretiatikStyle)
+                  input(type='radio', name='szeretiatik', value='helyes', checked=answers.szeretiatik)
+                  | Ketten szeretünk mi egyet!
+                  span(class="glyphicon glyphicon-ok form-control-feedback", style=szeretiatikGlyphicon)
+            div.radio
+                label
+                  input(type='radio', name='szeretiatik', value='jesszus')
+                  | Jesszus...
 
           fieldset(class =tori1Class)
               label Kérem nevezze meg a következő esemény évszámát! Zsubrinszky Zsófi és Kitzinger Zsolt románcának kezdete
