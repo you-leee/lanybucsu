@@ -36,6 +36,11 @@ router.post('/', function(req, res, next) {
       passed = false;
     }
   }
+
+  if(Object.keys(answers).length !== Object.keys(req.body).length) {
+    passed = false;
+  }
+
   responseBody.passed = passed;
 
   console.log(responseBody);
