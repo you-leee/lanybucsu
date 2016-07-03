@@ -19,13 +19,13 @@ block content
           - var tori1Glyphicon = answers.tori1 === undefined ? "visibility:hidden" : "visibility:visible"
           - var successStyle = passed === false ? "visibility:hidden" : "visibility:visible"
           fieldset(class =matek1Class)
-              label Ha te 2 sört szeretnél este inni és Zsolti nálad 2x annyit szokott meginni, akkor hány sört hozol a boltból?
+              label(id='small-label') Ha te 2 sört szeretnél este inni és Zsolti nálad 2x annyit szokott meginni, akkor hány sört hozol a boltból?
               input(type='text', class='form-control', name='matek1', value=answers.matek1)
               span(class="glyphicon glyphicon-ok form-control-feedback", style=matek1Glyphicon)
 
           - var sets = "<code>A = {almafröccs, magában, pálinka, chips, igyon, torkunkba, kocsma, ropi, bor, sör, ló, folyjon}, B = {ház, jóból, kerítés, söntés, bor, májunk, torkunkba, gyomrunkba, pálinka, hamburger, körte, sör, folyjon, sok, patak, Duna, szamár}</code>";
           fieldset(class ="form-group")
-            label Tekintsük a következő két hamazt: !{sets}. Mely hamlaz felel meg A &#8745; B halmaznak?
+            label(id='small-label') Tekintsük a következő két hamazt: !{sets}. Mely hamlaz felel meg A &#8745; B halmaznak?
             div.radio
                 label(style=matek2Style)
                   input(type='radio', name='matek2', value='helyes', checked=answers.matek2)
@@ -41,7 +41,7 @@ block content
                   | {jóból, is, megárt, sok}
 
           fieldset(class ="form-group")
-            label Egészítse ki a mondatot: "Szereti a tik a meggyet..."
+            label(id='small-label') Egészítse ki a mondatot: "Szereti a tik a meggyet..."
             div.radio
                 label
                   input(type='radio', name='szeretiatik', value='tizen')
@@ -57,7 +57,7 @@ block content
                   | Jesszus...
 
           fieldset(class =tori1Class)
-              label Kérem nevezze meg a következő esemény évszámát! Zsubrinszky Zsófi és Kitzinger Zsolt románcának kezdete
+              label(id='small-label') Kérem nevezze meg a következő esemény évszámát! Zsubrinszky Zsófi és Kitzinger Zsolt románcának kezdete
               input(type='text', class='form-control', name='tori1', value=answers.tori1)
               span(class="glyphicon glyphicon-ok form-control-feedback", style=tori1Glyphicon)
 
